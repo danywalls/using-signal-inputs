@@ -1,5 +1,6 @@
-import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, input} from '@angular/core';
 import {GridModule} from "@progress/kendo-angular-grid";
+
 
 
 export type GridConfig = {
@@ -22,20 +23,17 @@ const defaultConfig : GridConfig = {
   templateUrl: './invoices.component.html',
   styleUrl: './invoices.component.scss'
 })
-export class InvoicesComponent implements OnChanges {
+export class InvoicesComponent  {
 
-  @Input() config!: GridConfig;
-  @Input({ required: true}) data: Array<unknown> = []
-
-  ngOnChanges(changes: SimpleChanges): void {
-
-      if(!changes['config']) {
-        this.config = defaultConfig;
-        return;
+  kendoConfig =  input(
+    defaultConfig,
+    {
+      alias: 'config',
+      transform: (config: GridConfig) =>  {
+        config.title = config?.title   || 'Config but without title'
+        return config
       }
-      const { title } = changes['config'].currentValue;
-      if(!title) {
-         this.config.title = 'Config without Title'
-      }
-  }
+    });
+  data = input.required<Array<unknown>>();
+
 }

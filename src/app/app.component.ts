@@ -11,7 +11,6 @@ import {CREDIT_CARDS} from "./mock/credit-cards";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'using-signal-inputs';
 
   protected readonly CREDIT_CARDS = CREDIT_CARDS;
 
