@@ -14,6 +14,17 @@ Explore the transition from the traditional `@Input()` decorator to the new Sign
 1. `ng serve` 
 2. See the interaction between wrapper components and signal-based inputs.
 
+## Project Summary
+Explore the transition from the traditional `@Input()` decorator to the new Signal Inputs in Angular 17+, highlighting the benefits of reactive input handling.
+
+## How to Run
+### Installation
+1. `npm install` 
+
+### Running
+1. `ng serve` 
+2. See the interaction between wrapper components and signal-based inputs.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
 
 ## Development server
